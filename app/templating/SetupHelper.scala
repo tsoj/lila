@@ -304,4 +304,11 @@ trait SetupHelper { self: I18nHelper =>
       Pref.Blindfold.NO  -> trans.no.txt(),
       Pref.Blindfold.YES -> trans.yes.txt()
     )
+
+  def translatedZenModeChoices(implicit lang: Lang) =
+    List(
+      (Pref.Zen.NO, trans.no.txt()),
+      (Pref.Zen.YES, trans.yes.txt()),
+      (Pref.Zen.HIDE_ONLY_RATING, trans.preferences.hideOnlyRating.txt())
+    )
 }

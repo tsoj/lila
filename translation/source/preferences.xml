@@ -13,6 +13,7 @@
   <string name="chessPieceSymbol">Chess piece symbol</string>
   <string name="pgnLetter">Letter (K, Q, R, B, N)</string>
   <string name="zenMode">Zen mode</string>
+  <string name="hideOnlyRating">Hide only rating</string>
   <string name="displayBoardResizeHandle">Show board resize handle</string>
   <string name="onlyOnInitialPosition">Only on initial position</string>
   <string name="blindfoldChess">Blindfold chess (invisible pieces)</string>

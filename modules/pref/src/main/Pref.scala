@@ -86,7 +86,7 @@ case class Pref(
         SoundSet.allByKey get value map { s =>
           copy(soundSet = s.key)
         }
-      case "zen" => copy(zen = if (value == "1") 1 else 0).some
+      case "zen" => copy(zen = if (value == "1") 1 else if (value == "2") 2 else 0).some
       case _     => none
     }
 
@@ -106,6 +106,8 @@ case class Pref(
   def pieceNotationIsLetter = pieceNotation == PieceNotation.LETTER
 
   def isZen = zen == Zen.YES
+
+  def isRatingOnlyZen = zen == Zen.HIDE_ONLY_RATING
 
   def is2d = !is3d
 
@@ -399,7 +401,17 @@ object Pref {
     )
   }
 
-  object Zen extends BooleanPref {}
+  object Zen {
+    val NO   = 0
+    val HIDE_ONLY_RATING  = 1
+    val YES = 2
+
+    val choices = Seq(
+      NO   -> "No",
+      YES -> "Yes",
+      HIDE_ONLY_RATING  -> "Hide rating only"
+    )
+  }
 
   def create(id: String) = default.copy(_id = id)
 

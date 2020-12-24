@@ -181,6 +181,7 @@ export interface Pref {
   showCaptured: boolean;
   submitMove: boolean;
   resizeHandle: 0 | 1 | 2;
+  zen: 0 | 1 | 2;
 }
 
 export interface MoveMetadata {

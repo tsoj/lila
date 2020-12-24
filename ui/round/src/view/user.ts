@@ -46,7 +46,8 @@ export function userHtml(ctrl: RoundController, player: Player, position: Positi
           user.title
         ), ' ', user.username
       ] : [user.username]),
-      rating ? h('rating', rating + (player.provisional ? '?' : '')) : null,
+      rating && (ctrl.data.pref.zen != 1 || !(ctrl.data.game.status.name == 'started' || ctrl.data.game.status.name == 'noStart'))
+        ? h('rating', rating + (player.provisional ? '?' : '')) : null,
       ratingDiff,
       player.engine ? h('span', {
         attrs: {

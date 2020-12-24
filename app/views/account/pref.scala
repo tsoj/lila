@@ -77,7 +77,7 @@ object pref {
             ),
             setting(
               zenMode(),
-              radios(form("display.zen"), booleanChoices)
+              radios(form("display.zen"), translatedZenModeChoices)
             ),
             setting(
               displayBoardResizeHandle(),
